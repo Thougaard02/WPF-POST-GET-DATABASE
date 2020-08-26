@@ -34,21 +34,19 @@ namespace WpfProgram
             InitializeComponent();
             lv_mainView.ItemsSource = customers;
             GetQueryFromDB();
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PostDataToDB();
             GetQueryFromDB();
-
         }
 
         void PostDataToDB()
         {
-
             string sqlPostQuery = $"INSERT INTO Customers(FirstName,LastName,HomeAddress,ZipCode)VALUES (@FirstName, @LastName, @HomeAddress, @Zipcode)";
             SqlCommand cmd = new SqlCommand(sqlPostQuery, con);
+
             con.Open();
             cmd.CommandText = sqlPostQuery;
             cmd.Parameters.AddWithValue("@FirstName", textBox2.Text);
@@ -66,6 +64,7 @@ namespace WpfProgram
             string query = "SELECT * FROM Customers";           
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             while (dr.Read())
             {
                 Customer customer = new Customer();
@@ -74,15 +73,12 @@ namespace WpfProgram
                 customer.LastName = (dr["LastName"].ToString());
                 customer.HomeAddress = (dr["HomeAddress"].ToString());
                 customer.ZipCode = (dr["ZipCode"].ToString());
-
                 customers.Add(customer);
             }
             con.Close();
         }
     }
 }
-
-//Ny knap som opretter bruger og en knap som updater siden/opdater sigen af sig selv.
 
 
 

@@ -19,7 +19,7 @@
         <TextBox Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="107,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="107,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <ListView Name="lv_mainView"  HorizontalAlignment="Left" Height="191" Margin="363,33,0,0" VerticalAlignment="Top" Width="318">
+        <ListView Name="lv_mainView"  HorizontalAlignment="Left" Height="300" Margin="322,33,0,0" VerticalAlignment="Top" Width="359">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
